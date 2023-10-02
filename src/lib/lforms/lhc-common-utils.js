@@ -20,6 +20,7 @@ const CommonUtils = {
     'YYYY',
     'YYYY-M-D',
     'YYYY/M/D',
+    'DD.MM.YYYY',
     moment.ISO_8601,
     'M/D/YYYY HH:mm',
     'M/D/YY HH:mm',
@@ -27,6 +28,7 @@ const CommonUtils = {
     'M-D-YYYY HH:mm',
     'M-D-YY HH:mm',
     'M-D HH:mm',
+    'DD.MM.YYYY HH:mm'
   ],
 
   intRegex: /^\s*(\+|-)?\d+\s*$/,

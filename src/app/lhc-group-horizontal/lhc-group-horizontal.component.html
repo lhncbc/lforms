@@ -48,7 +48,7 @@
 
     <!-- a button at the end of each repeating section -->
     <div *ngIf="item._questionRepeatable && lhcDataService.targetShown(item) && !item._isHiddenFromView" class="lhc-button-padding {{lhcDataService.getSkipLogicClass(item)}}">
-      <lhc-button-popover [item]="item" [popoverType]="'repeating-item'" buttonLabel= '+ Add another row of "{{item._text}}"' [append]="true"></lhc-button-popover>
+      <lhc-button-popover [item]="item" [popoverType]="'repeating-item'" buttonLabel= '+' [append]="true"></lhc-button-popover>
     </div>
   </div>
 

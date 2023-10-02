@@ -20,7 +20,7 @@ export class LhcButtonPopoverComponent {
    * Send the popover content to screen reader log when the popover button is clicked
    */
   onShowingPopver(): void {
-    let title = this.popoverType === "copyright-string" ? "Copyright notice:" : "Instruction:"
+    let title = this.popoverType === "copyright-string" ? "Copyright notice:" : "Info:"
     let content, contentId;
 
     if (this.popoverType === "copyright-string") {
@@ -28,7 +28,7 @@ export class LhcButtonPopoverComponent {
       contentId = "copyright-content-" + (this.formLevel ? this.item.code : this.item._elementId);
     }
     else {
-      title = "Instruction:"
+      title = "Info:"
       contentId = "help-content-" + (this.formLevel ? this.item.code : this.item._elementId);
     }
 

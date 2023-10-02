@@ -22,7 +22,7 @@
 
   <!-- a button at the end of each repeating section -->
   <div *ngIf="item._lastRepeatingItem" class="lhc-button-padding {{lhcDataService.getSkipLogicClass(item)}}">
-    <lhc-button-popover [item]="item" [popoverType]="'repeating-item'" buttonLabel= '+ Add another "{{item._text}}"'></lhc-button-popover>
+    <lhc-button-popover [item]="item" [popoverType]="'repeating-item'" buttonLabel= '+'></lhc-button-popover>
   </div>
 
 </ng-container>

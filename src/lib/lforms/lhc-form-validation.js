@@ -49,26 +49,26 @@ const Validation = {
   ],
 
   _errorMessages : {
-    "BL": "must be a boolean (true/false).",     // not fully supported
-    "INT": "must be an integer number.",
-    "REAL": "must be a decimal number.",
+    "BL": "muss ein boolean-Wert sein (true/false).",     // not fully supported
+    "INT": "muss eine Ganzzahl sein.",
+    "REAL": "muss eine Dezimalzahl sein.",
     "ST": "must be a string value.",      // not needed
     "TX": "must be a text value.",        // not needed
     "BIN": "must be a binary value.",     // not supported
     "DT": "must be a date value.",        // not used, handled by lf-date directive
     "DTM": "must be a date and time value.",  // not supported
-    "TM": "must be a time value.",
+    "TM": "muss eine Zeitangabe sein.",
     "CNE": "must be a value from the answer list.",  // not used, handled by the autocomplete-lhc directive
     "CWE": "must be a value from the answer list or a user supplied value.", // not used, handled by the autocomplete-lhc directive
     "RTO": "must be a ratio value.",          // not supported
-    "QTY": "must be a decimal number",
+    "QTY": "muss eine Dezimalzahl sein",
     "NR": "must be two numeric values separated by a ^. One value can be omitted, but not the ^.",
-    "YEAR": "must be a numeric value of year.",
-    "MONTH": "must be a numeric value of month.",
-    "DAY": "must be a numeric value of day.",
-    "URL": "must be a valid URL.",
-    "EMAIL": "must be a valid email address.",
-    "PHONE": "must be a valid phone number."
+    "YEAR": "muss eine Jahresangabe sein.",
+    "MONTH": "muss eine numerische Monatsangabe sein.",
+    "DAY": "muss eine numerische Tagesangangabe sein.",
+    "URL": "muss eine gültige URL sein.",
+    "EMAIL": "muss eine gültige URL sein.",
+    "PHONE": "muss eine gültige Telefonnummer sein."
   },
 
   /**
@@ -84,7 +84,7 @@ const Validation = {
         (value === undefined || value === null || value === '' ||
         (Array.isArray(value) && value.length ===0))) {
       ret = false;
-      errors.push("requires a value");
+      errors.push(" - Eingabe erforderlich");
     }
     return ret;
   },
@@ -187,7 +187,7 @@ const Validation = {
             }
             else {
               valid = false;
-              errors.push("must be a value greater than " + keyValue + ".");
+              errors.push(" - Wert muss größer sein als " + keyValue + ".");
             }
             break;
           case "minInclusive":
@@ -196,7 +196,7 @@ const Validation = {
             }
             else {
               valid = false;
-              errors.push("must be a value greater than or equal to " + keyValue+ ".");
+              errors.push(" - Wert muss größer oder gleich sein als " + keyValue+ ".");
             }
             break;
           case "maxExclusive":
@@ -205,7 +205,7 @@ const Validation = {
             }
             else {
               valid = false;
-              errors.push("must be a value less than " + keyValue+ ".");
+              errors.push(" - Wert muss kleiner sein als " + keyValue+ ".");
             }
             break;
           case "maxInclusive":
@@ -214,7 +214,7 @@ const Validation = {
             }
             else {
               valid = false;
-              errors.push("must be a value less than or equal to " + keyValue+ ".");
+              errors.push("- Wert muss kleiner oder gleich sein als " + keyValue+ ".");
             }
             break;
           case "totalDigits":
@@ -229,7 +229,7 @@ const Validation = {
             }
             else {
               valid = false;
-              errors.push("must have a total length of " + keyValue+ ".");
+              errors.push(" - muss eine Länge haben von " + keyValue+ ".");
             }
             break;
           case "maxLength":
@@ -238,7 +238,7 @@ const Validation = {
             }
             else {
               valid = false;
-              errors.push("must have a total length less than or equal to " + keyValue+ ".");
+              errors.push(" - darf maximal " + keyValue + " Zeichen lang sein.");
             }
             break;
           case "minLength":
@@ -247,7 +247,7 @@ const Validation = {
             }
             else {
               valid = false;
-              errors.push("must have a total length greater than or equal to " + keyValue+ ".");
+              errors.push(" - muss mindestens "  + keyValue + " Zeichen lang sein.");
             }
             break;
           case "pattern":
@@ -263,7 +263,7 @@ const Validation = {
             }
             else {
               valid = false;
-              errors.push("must match a RegExp pattern of " + keyValue+ ".");
+              errors.push(" - muss folgendem Muster entsprechen: " + keyValue+ ".");
             }
             break;
           default:
